@@ -6,7 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 
 class Doctor extends Model
 {
-    public function specs(){
-      return $this->belongsToMany('App\Specs');
+    protected $fillable = [
+        'filial_id', 'name', 'min_time', 'max_time', 'days_off',
+    ];
+
+    public function specs()
+    {
+        return $this->belongsToMany(Spec::class);
     }
 }

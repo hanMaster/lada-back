@@ -16,11 +16,10 @@ class CreateDoctorsTable extends Migration
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
             $table->bigInteger('filial_id');
-            $table->bigInteger('spec_id');
             $table->string('name');
             $table->string('min_time');
             $table->string('max_time');
-            $table->json('days_off');
+            $table->string('days_off');
         });
     }
 
