@@ -17,9 +17,6 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->bigInteger('filial_id');
             $table->string('name');
-            $table->string('min_time');
-            $table->string('max_time');
-            $table->string('days_off');
         });
     }
 

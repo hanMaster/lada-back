@@ -14,8 +14,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:airlock')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::middleware('auth:airlock')->get('/profile','ProfileController@index');
 
-Route::get('doctors', 'FilialDoctorsController@index')->name('doctors');
+Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
+
+Route::get('filials', 'FilialDoctorsController@index')->name('filials');

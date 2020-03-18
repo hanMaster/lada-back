@@ -14,4 +14,8 @@ class Filial extends Model
     {
         return $this->belongsToMany(Spec::class);
     }
+
+    public function doctors(){
+        return $this->hasMany(Doctor::class);
+    }
 }

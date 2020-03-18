@@ -15,6 +15,7 @@ class CreateCalendarEventsTable extends Migration
     {
         Schema::create('calendar_events', function (Blueprint $table) {
             $table->id();
+            $table->bigInteger('filial_id')->default(1);
             $table->bigInteger('doctor_id');
             $table->string('start');
             $table->string('end');
@@ -22,7 +23,7 @@ class CreateCalendarEventsTable extends Migration
             $table->string('mname');
             $table->string('sname');
             $table->string('phone');
-            $table->string('record_type');
+            $table->integer('record_type')->default(1);
             $table->timestamps();
         });
     }
