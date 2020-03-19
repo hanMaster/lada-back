@@ -49,9 +49,8 @@ class DoctorsTransformer extends TransformerAbstract
         return [
             'id' => $doctor->id,
             'name' => $doctor->name,
-            'minTime' => $ds->min_time,
-            'maxTime' => $ds->max_time,
-            'hidden' => json_decode($ds->days_off)
+//            'businessHours' => json_decode($ds->businessHours)
+            'businessHours' => $ds->businessHours
         ];
     }
 
