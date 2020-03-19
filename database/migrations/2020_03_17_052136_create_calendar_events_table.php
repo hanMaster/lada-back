@@ -17,6 +17,7 @@ class CreateCalendarEventsTable extends Migration
             $table->id();
             $table->bigInteger('filial_id')->default(1);
             $table->bigInteger('doctor_id');
+            $table->bigInteger('spec_id');
             $table->string('start');
             $table->string('end');
             $table->string('fname');

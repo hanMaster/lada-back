@@ -2,6 +2,7 @@
 
 namespace App\Transformers;
 
+use App\CalendarEvent;
 use App\Doctor;
 use App\DoctorSpec;
 use League\Fractal\TransformerAbstract;
@@ -9,10 +10,6 @@ use League\Fractal\TransformerAbstract;
 class DoctorsTransformer extends TransformerAbstract
 {
     protected $id;
-    protected $min_time;
-    protected $max_time;
-    protected $days_off;
-
 
     public function __construct($specId)
     {
@@ -49,14 +46,14 @@ class DoctorsTransformer extends TransformerAbstract
         return [
             'id' => $doctor->id,
             'name' => $doctor->name,
-//            'businessHours' => json_decode($ds->businessHours)
             'businessHours' => $ds->businessHours
         ];
     }
 
     public function includeEvents(Doctor $doctor)
     {
-        return $this->collection($doctor->events, new EventsTransformer);
+        $events = CalendarEvent::where('doctor_id', $doctor->id )->where('spec_id', $this->id)->get();
+        return $this->collection($events, new EventsTransformer);
 
     }
 }

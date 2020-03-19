@@ -19,3 +19,6 @@ Route::middleware('auth:airlock')->get('/profile','ProfileController@index');
 Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
 
 Route::get('filials', 'FilialDoctorsController@index')->name('filials');
+
+Route::get('events/{filial}', 'EventController@index')->middleware('auth:airlock');
+Route::post('event', 'EventController@store');

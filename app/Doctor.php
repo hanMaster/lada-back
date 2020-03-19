@@ -14,8 +14,4 @@ class Doctor extends Model
     {
         return $this->belongsToMany(Spec::class);
     }
-
-    public function events(){
-        return $this->hasMany(CalendarEvent::class);
-    }
 }

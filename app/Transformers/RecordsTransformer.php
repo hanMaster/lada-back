@@ -5,7 +5,7 @@ namespace App\Transformers;
 use App\CalendarEvent;
 use League\Fractal\TransformerAbstract;
 
-class EventsTransformer extends TransformerAbstract
+class RecordsTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include
@@ -13,7 +13,7 @@ class EventsTransformer extends TransformerAbstract
      * @var array
      */
     protected $defaultIncludes = [
-        //
+
     ];
 
     /**
@@ -28,15 +28,19 @@ class EventsTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
-     * @param CalendarEvent $event
      * @return array
      */
     public function transform(CalendarEvent $event)
     {
         return [
             'id'=>$event->id,
+            'doctor'=>$event->doctor->name,
+            'spec'=>$event->spec->name,
+            'phone'=>$event->phone,
             'start'=>$event->start,
-            'end'=>$event->end
+            'fname'=>$event->fname,
+            'mname'=>$event->mname,
+            'sname'=>$event->sname
         ];
     }
 }
