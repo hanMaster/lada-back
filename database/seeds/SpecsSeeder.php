@@ -12,12 +12,12 @@ class SpecsSeeder extends Seeder
      */
     public function run()
     {
-        Spec::insert(['name' => 'Прием терапевта']);
-        Spec::insert(['name' => 'Прием гастроэнтеролога']);
-        Spec::insert(['name' => 'Прием кардиолога']);
-        Spec::insert(['name' => 'Прием сомнолога']);
-        Spec::insert(['name' => 'Прием онколога']);
-        Spec::insert(['name' => 'Прием гинеколога']);
-        Spec::insert(['name' => 'Узи исследования']);
+        Spec::insert(['name' => 'терапевт']);
+        Spec::insert(['name' => 'гастроэнтеролог']);
+        Spec::insert(['name' => 'кардиолог']);
+        Spec::insert(['name' => 'сомнолог']);
+        Spec::insert(['name' => 'онколога']);
+        Spec::insert(['name' => 'гинеколога']);
+        Spec::insert(['name' => 'узи']);
     }
 }

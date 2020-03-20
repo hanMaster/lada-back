@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Filial;
 use App\Transformers\FilialTransformer;
-use Illuminate\Http\Request;
+use App\Transformers\AdminDoctorsTransformer;
 
 class FilialDoctorsController extends Controller
 {
@@ -24,6 +24,13 @@ class FilialDoctorsController extends Controller
         return fractal()
             ->item($filial)
             ->transformWith(new FilialTransformer)
+            ->toArray();
+    }
+
+    public function doctors(Filial $filial){
+        return fractal()
+            ->collection($filial->doctors)
+            ->transformWith(new AdminDoctorsTransformer)
             ->toArray();
     }
 }
