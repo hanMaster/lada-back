@@ -42,7 +42,7 @@ class DoctorsTransformer extends TransformerAbstract
     public function transform(Doctor $doctor)
     {
 
-        $ds = DoctorSpec::where('spec_id', $this->id)->first();
+        $ds = DoctorSpec::where('doctor_id', $doctor->id)->where('spec_id', $this->id)->first();
         return [
             'id' => $doctor->id,
             'name' => $doctor->name,

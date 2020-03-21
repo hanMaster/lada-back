@@ -17,7 +17,7 @@ class CreateDoctorSpecTable extends Migration
             $table->id();
             $table->bigInteger('doctor_id');
             $table->bigInteger('spec_id');
-            $table->string('businessHours');
+            $table->text('businessHours');
         });
     }
 
