@@ -9,7 +9,8 @@ use App\Transformers\RecordsTransformer;
 
 class EventController extends Controller
 {
-    public function index(Filial $filial){
+    public function index(Filial $filial)
+    {
         $records = CalendarEvent::where('filial_id', $filial->id)->get();
 
         return fractal()
@@ -19,7 +20,8 @@ class EventController extends Controller
 
     }
 
-    public function store(EventRequest $request){
+    public function store(EventRequest $request)
+    {
         return CalendarEvent::create([
             'filial_id' => $request['filialId'],
             'doctor_id' => $request['doctorId'],
@@ -32,5 +34,15 @@ class EventController extends Controller
             'phone' => $request['phone'],
             'record_type' => $request['type']
         ]);
+    }
+
+    public function destroy(CalendarEvent $event)
+    {
+        try {
+            $event->delete();
+            return response()->json('Successful deleted', 200);
+        } catch (\Exception $exception) {
+            return response()->json($exception, 500);
+        }
     }
 }

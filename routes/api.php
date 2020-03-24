@@ -22,9 +22,12 @@ Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
 Route::get('filials', 'FilialDoctorsController@index')->name('filials');
 
 Route::get('events/{filial}', 'EventController@index')->middleware(AUTH_SANCTUM);
+
+
 Route::get('doctors/{filial}', 'FilialDoctorsController@doctors')->middleware(AUTH_SANCTUM);
 
 Route::post('event', 'EventController@store');
+Route::delete('event/{event}', 'EventController@destroy')->middleware(AUTH_SANCTUM);
 
 Route::post('schedule', 'FilialDoctorsController@storeSchedule')->middleware(AUTH_SANCTUM);
 
