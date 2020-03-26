@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Doctor;
 use App\DoctorSpec;
 use App\Filial;
 use App\Transformers\FilialTransformer;
@@ -45,5 +46,17 @@ class FilialDoctorsController extends Controller
         $ds->save();
 
         return response()->json(200);
+    }
+
+    public function store(Filial $filial, Request $request){
+        $request->validate([
+            'name' => 'required|string|min:2|max:255',
+        ]);
+
+        $doctor = new Doctor();
+        $doctor->filial_id = $filial->id;
+        $doctor->name = $request->name;
+        $doctor->save();
+        return response()->json($doctor, 200);
     }
 }

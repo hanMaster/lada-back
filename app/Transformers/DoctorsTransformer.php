@@ -41,18 +41,18 @@ class DoctorsTransformer extends TransformerAbstract
      */
     public function transform(Doctor $doctor)
     {
-
         $ds = DoctorSpec::where('doctor_id', $doctor->id)->where('spec_id', $this->id)->first();
         return [
             'id' => $doctor->id,
             'name' => $doctor->name,
+            'status' => $doctor->status,
             'businessHours' => $ds->businessHours
         ];
     }
 
     public function includeEvents(Doctor $doctor)
     {
-        $events = CalendarEvent::where('doctor_id', $doctor->id )->where('spec_id', $this->id)->get();
+        $events = CalendarEvent::where('doctor_id', $doctor->id)->where('spec_id', $this->id)->get();
         return $this->collection($events, new EventsTransformer);
 
     }

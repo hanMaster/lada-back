@@ -25,6 +25,8 @@ Route::get('events/{filial}', 'EventController@index')->middleware(AUTH_SANCTUM)
 
 
 Route::get('doctors/{filial}', 'FilialDoctorsController@doctors')->middleware(AUTH_SANCTUM);
+Route::post('doctors/{filial}', 'FilialDoctorsController@store')->middleware(AUTH_SANCTUM);
+Route::post('assign-spec', 'FilialDoctorsController@assignSpec')->middleware(AUTH_SANCTUM);
 
 Route::post('event', 'EventController@store');
 Route::delete('event/{event}', 'EventController@destroy')->middleware(AUTH_SANCTUM);

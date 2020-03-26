@@ -35,7 +35,8 @@ class AdminDoctorsTransformer extends TransformerAbstract
     {
         return [
             'id'=>$doctor->id,
-            'name'=>$doctor->name
+            'name'=>$doctor->name,
+            'status'=>$doctor->status
         ];
     }
 
