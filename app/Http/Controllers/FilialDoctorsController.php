@@ -59,4 +59,10 @@ class FilialDoctorsController extends Controller
         $doctor->save();
         return response()->json($doctor, 200);
     }
+
+    public function updateDoctor(Doctor $doctor, Request $request){
+        $doctor->status = $request->status;
+        $doctor->save();
+        return response()->json($doctor, 200);
+    }
 }

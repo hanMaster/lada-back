@@ -17,7 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->bigInteger('filial_id');
             $table->string('name');
-            $table->string('status')->default('work');
+            $table->boolean('status')->default(false);
         });
     }
 
