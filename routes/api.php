@@ -37,3 +37,6 @@ Route::post('schedule', 'FilialDoctorsController@storeSchedule')->middleware(AUT
 
 Route::post('spec', 'SpecController@store')->middleware(AUTH_SANCTUM);
 Route::put('spec/{spec}', 'SpecController@update')->middleware(AUTH_SANCTUM);
+
+Route::post('login', 'Auth\LoginController@login');
+Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');
