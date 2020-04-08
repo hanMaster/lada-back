@@ -15,7 +15,7 @@ define('AUTH_SANCTUM', "auth:sanctum");
 |
 */
 
-Route::middleware(AUTH_SANCTUM)->get('/profile','ProfileController@index');
+Route::middleware(AUTH_SANCTUM)->get('/profile', 'ProfileController@index');
 
 Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
 
@@ -40,3 +40,5 @@ Route::put('spec/{spec}', 'SpecController@update')->middleware(AUTH_SANCTUM);
 
 Route::post('login', 'Auth\LoginController@login');
 Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');
+
+Route::post('email', 'MessageController@sendMessage');
