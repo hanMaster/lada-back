@@ -24,7 +24,7 @@ Route::get('filials', 'FilialDoctorsController@index')->name('filials');
 Route::get('events/{filial}', 'EventController@index')->middleware(AUTH_SANCTUM);
 
 
-Route::get('doctors/{filial}', 'FilialDoctorsController@doctors')->middleware(AUTH_SANCTUM);
+Route::get('doctors/{filial}', 'FilialDoctorsController@doctors');
 Route::post('doctors/{filial}', 'FilialDoctorsController@store')->middleware(AUTH_SANCTUM);
 Route::put('doctor/{doctor}', 'FilialDoctorsController@updateDoctor')->middleware(AUTH_SANCTUM);
 

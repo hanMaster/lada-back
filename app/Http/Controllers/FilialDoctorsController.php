@@ -15,12 +15,7 @@ class FilialDoctorsController extends Controller
 
 
     public function index(){
-        $filials = Filial::all();
-
-        return fractal()
-            ->collection($filials)
-            ->transformWith(new FilialTransformer)
-            ->toArray();
+        return Filial::all();
     }
 
     public function filial(Filial $filial)
