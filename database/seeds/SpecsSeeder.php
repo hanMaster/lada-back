@@ -19,5 +19,7 @@ class SpecsSeeder extends Seeder
         Spec::insert(['name' => 'онколог']);
         Spec::insert(['name' => 'гинеколог']);
         Spec::insert(['name' => 'узи']);
+        Spec::insert(['name' => 'эндокринолог']);
+        Spec::insert(['name' => 'отоларинголог']);
     }
 }

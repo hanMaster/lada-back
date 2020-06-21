@@ -1,5 +1,6 @@
 <?php
 
+use App\DoctorService;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,11 +15,13 @@ class DatabaseSeeder extends Seeder
         $this->call([
             UsersTableSeeder::class,
             FilialsSeeder::class,
+            DoctorFilialSeeder::class,
             DoctorsSeeder::class,
             SpecsSeeder::class,
             DoctorSpecSeeder::class,
-            FilialSpecSeeder::class,
-            CalendarEventsSeeder::class,
+            DoctorServiceSeeder::class,
+//            CalendarEventsSeeder::class,
+            ServicesSeeder::class
         ]);
     }
 }

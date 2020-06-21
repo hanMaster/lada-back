@@ -2,25 +2,18 @@
 
 namespace App\Transformers;
 
-use App\DoctorSpec;
-use App\Service;
 use App\Spec;
 use League\Fractal\TransformerAbstract;
 
-class DoctorSpecsTransformer extends TransformerAbstract
+class AdminSpecsTransformer extends TransformerAbstract
 {
-    protected $doctor_id;
-    public function __construct($id)
-    {
-        $this->doctor_id = $id;
-    }
-
     /**
      * List of resources to automatically include
      *
      * @var array
      */
     protected $defaultIncludes = [
+        //
     ];
 
     /**
@@ -39,11 +32,9 @@ class DoctorSpecsTransformer extends TransformerAbstract
      */
     public function transform(Spec $spec)
     {
-        $bh = DoctorSpec::where('doctor_id', $this->doctor_id)->where('spec_id', $spec->id)->first();
         return [
             'id'=>$spec->id,
-            'name'=>$spec->name,
-            'businessHours'=>$bh->businessHours
+            'specName'=>$spec->name
         ];
     }
 }

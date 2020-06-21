@@ -35,8 +35,12 @@ Route::delete('event/{event}', 'EventController@destroy')->middleware(AUTH_SANCT
 
 Route::post('schedule', 'FilialDoctorsController@storeSchedule')->middleware(AUTH_SANCTUM);
 
+Route::get('specs', 'SpecController@index')->middleware(AUTH_SANCTUM);
 Route::post('spec', 'SpecController@store')->middleware(AUTH_SANCTUM);
 Route::put('spec/{spec}', 'SpecController@update')->middleware(AUTH_SANCTUM);
+
+Route::get('services', 'ServiceController@index')->middleware(AUTH_SANCTUM);
+Route::post('service', 'ServiceController@store')->middleware(AUTH_SANCTUM);
 
 Route::post('login', 'Auth\LoginController@login');
 Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');

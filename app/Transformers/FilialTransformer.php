@@ -12,9 +12,7 @@ class FilialTransformer extends TransformerAbstract
      *
      * @var array
      */
-    protected $defaultIncludes = [
-        'specs'
-    ];
+    protected $defaultIncludes = [    ];
 
     /**
      * List of resources possible to include
@@ -22,7 +20,7 @@ class FilialTransformer extends TransformerAbstract
      * @var array
      */
     protected $availableIncludes = [
-        'specs', 'doctors'
+        'doctors'
     ];
 
     /**
@@ -37,12 +35,6 @@ class FilialTransformer extends TransformerAbstract
             'name' => $filial->name,
             'address'=>$filial->address
         ];
-    }
-
-    public function includeSpecs(Filial $filial)
-    {
-        return $this->collection($filial->specs, new SpecTransformer);
-
     }
 
     public function includeDoctors(Filial $filial)

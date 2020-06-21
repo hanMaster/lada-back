@@ -12,17 +12,19 @@ class DoctorsSeeder extends Seeder
      */
     public function run()
     {
-        Doctor::insert(['filial_id' => 1, 'name' => 'Гилибранд Л.А.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Заузолкова М.Е.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Платицына А.С']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Гусаров М.Ю.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Литвинович Т.В.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Никишин В.А.',]);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Еремина Ю.Б.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Сауткин Д.В.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Плюснина И.Н.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Гурылева Е.Н.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Мишенева Е.А.']);
-        Doctor::insert(['filial_id' => 1, 'name' => 'Габова Е.В.',]);
+        Doctor::insert(['name' => 'Гилибранд Л.А.']);  //1
+        Doctor::insert(['name' => 'Заузолкова М.Е.']); //2
+        Doctor::insert(['name' => 'Платицына А.С']);   //3
+        Doctor::insert(['name' => 'Гусаров М.Ю.']);    //4
+        Doctor::insert(['name' => 'Литвинович Т.В.']); //5
+        Doctor::insert(['name' => 'Никишин В.А.']);    //6
+        Doctor::insert(['name' => 'Еремина Ю.Б.']);    //7
+        Doctor::insert(['name' => 'Сауткин Д.В.']);    //8
+        Doctor::insert(['name' => 'Габова Е.В.']);     //9
+        Doctor::insert(['name' => 'Плюснина И.Н.']);   //10
+        Doctor::insert(['name' => 'Гурылева Е.Н.']);   //11
+        Doctor::insert(['name' => 'Мишенева Е.А.']);   //12
+        Doctor::insert(['name' => 'Фимина О.Т.']);     //13
+        Doctor::insert(['name' => 'Ткач М.В.']);       //14
     }
 }

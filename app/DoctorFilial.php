@@ -4,15 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Spec extends Model
+class DoctorFilial extends Model
 {
     public $timestamps = false;
+
     protected $fillable = [
-        'name'
+        'doctor_id', 'filial_id'
     ];
 
-    public function doctors(){
-        return $this->belongsToMany(Doctor::class);
-    }
+    protected $table = 'doctor_filial';
 
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDoctorSpecTable extends Migration
+class CreateServicesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,13 @@ class CreateDoctorSpecTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctor_spec', function (Blueprint $table) {
-            $table->bigInteger('doctor_id');
+        Schema::create('services', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('spec_id');
-            $table->text('businessHours');
-            $table->primary(['doctor_id', 'spec_id']);
+            $table->string('name');
+            $table->integer('duration')->default(20);
+            $table->string('code_1c')->nullable();
+            $table->decimal('price')->default(1.0);
         });
     }
 
@@ -28,6 +30,6 @@ class CreateDoctorSpecTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doctor_spec');
+        Schema::dropIfExists('services');
     }
 }

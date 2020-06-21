@@ -14,7 +14,7 @@ class AdminDoctorsTransformer extends TransformerAbstract
      * @var array
      */
     protected $defaultIncludes = [
-        'specs'
+        'specs', 'services'
     ];
 
     /**
@@ -29,6 +29,7 @@ class AdminDoctorsTransformer extends TransformerAbstract
     /**
      * A Fractal transformer.
      *
+     * @param Doctor $doctor
      * @return array
      */
     public function transform(Doctor $doctor)
@@ -42,5 +43,9 @@ class AdminDoctorsTransformer extends TransformerAbstract
 
     public function includeSpecs(Doctor $doctor){
         return $this->collection($doctor->specs, new DoctorSpecsTransformer($doctor->id));
+    }
+
+    public function includeServices(Doctor $doctor){
+        return $this->collection($doctor->services, new ServicesTransformer);
     }
 }

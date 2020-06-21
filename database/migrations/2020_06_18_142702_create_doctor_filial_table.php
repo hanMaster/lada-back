@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDoctorSpecTable extends Migration
+class CreateDoctorFilialTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateDoctorSpecTable extends Migration
      */
     public function up()
     {
-        Schema::create('doctor_spec', function (Blueprint $table) {
+        Schema::create('doctor_filial', function (Blueprint $table) {
             $table->bigInteger('doctor_id');
-            $table->bigInteger('spec_id');
-            $table->text('businessHours');
-            $table->primary(['doctor_id', 'spec_id']);
+            $table->bigInteger('filial_id');
+            $table->primary(['doctor_id', 'filial_id']);
         });
     }
 
@@ -28,6 +27,6 @@ class CreateDoctorSpecTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('doctor_spec');
+        Schema::dropIfExists('doctor_filial');
     }
 }

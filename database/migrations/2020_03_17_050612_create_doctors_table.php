@@ -15,7 +15,6 @@ class CreateDoctorsTable extends Migration
     {
         Schema::create('doctors', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('filial_id');
             $table->string('name');
             $table->boolean('status')->default(false);
         });

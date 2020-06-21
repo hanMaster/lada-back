@@ -10,12 +10,9 @@ class Filial extends Model
         'name', 'address'
     ];
 
-    public function specs()
+    public function doctors()
     {
-        return $this->belongsToMany(Spec::class);
+        return $this->belongsToMany(Doctor::class);
     }
 
-    public function doctors(){
-        return $this->hasMany(Doctor::class);
-    }
 }
