@@ -14,10 +14,10 @@ class CreateDoctorSpecTable extends Migration
     public function up()
     {
         Schema::create('doctor_spec', function (Blueprint $table) {
+            $table->id();
             $table->bigInteger('doctor_id');
             $table->bigInteger('spec_id');
             $table->text('businessHours');
-            $table->primary(['doctor_id', 'spec_id']);
         });
     }
 

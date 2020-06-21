@@ -40,9 +40,11 @@ Route::post('spec', 'SpecController@store')->middleware(AUTH_SANCTUM);
 Route::put('spec/{spec}', 'SpecController@update')->middleware(AUTH_SANCTUM);
 
 Route::get('services', 'ServiceController@index')->middleware(AUTH_SANCTUM);
+Route::post('assign-service', 'ServiceController@assignServiceToDoctors')->middleware(AUTH_SANCTUM);
 Route::post('service', 'ServiceController@store')->middleware(AUTH_SANCTUM);
 
 Route::post('login', 'Auth\LoginController@login');
+//Route::post('logout', 'Auth\LoginController@logout');
 Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');
 
 Route::post('email', 'MessageController@sendMessage');
