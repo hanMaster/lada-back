@@ -17,15 +17,11 @@ class CreateCalendarEventsTable extends Migration
             $table->id();
             $table->bigInteger('filial_id')->default(1);
             $table->bigInteger('doctor_id');
-            $table->bigInteger('spec_id');
             $table->bigInteger('service_id');
             $table->string('start');
-            $table->string('end');
-            $table->string('fname');
-            $table->string('mname');
-            $table->string('sname');
+            $table->string('name');
             $table->string('phone');
-            $table->integer('record_type')->default(1);
+            $table->integer('payment_type');
             $table->timestamps();
         });
     }

@@ -26,14 +26,11 @@ class EventRequest extends FormRequest
         return [
             'filialId' => 'required',
             'doctorId' => 'required',
-            'specId' => 'required',
+            'serviceId' => 'required',
             'start' => 'required|string',
-            'end' => 'required|string',
-            'fname' => 'required|string|min:2|max:255',
-            'mname' => 'required|string|min:2|max:255',
-            'sname' => 'required|string|min:2|max:255',
+            'name' => 'required|string|min:2|max:255',
             'phone' => 'required|string|min:12|max:12',
-            'type' => 'required|integer'
+            'paymentType' => 'required'
         ];
     }
 }

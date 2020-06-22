@@ -25,14 +25,11 @@ class EventController extends Controller
         return CalendarEvent::create([
             'filial_id' => $request['filialId'],
             'doctor_id' => $request['doctorId'],
-            'spec_id' => $request['specId'],
+            'service_id' => $request['serviceId'],
             'start' => $request['start'],
-            'end' => $request['end'],
-            'fname' => $request['fname'],
-            'mname' => $request['mname'],
-            'sname' => $request['sname'],
+            'name' => $request['name'],
             'phone' => $request['phone'],
-            'record_type' => $request['type']
+            'payment_type' => $request['paymentType'],
         ]);
     }
 
