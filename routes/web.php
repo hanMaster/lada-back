@@ -20,6 +20,6 @@ Route::get('/email', function () {
     return 'test';
 });
 
-Auth::routes();
+//Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -1,6 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 define('AUTH_SANCTUM', "auth:sanctum");
@@ -44,7 +43,7 @@ Route::post('assign-service', 'ServiceController@assignServiceToDoctors')->middl
 Route::post('service', 'ServiceController@store')->middleware(AUTH_SANCTUM);
 
 Route::post('login', 'Auth\LoginController@login');
-//Route::post('logout', 'Auth\LoginController@logout');
+Route::post('logout', 'Auth\LoginController@logout');
 Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');
 
 Route::post('email', 'MessageController@sendMessage');
