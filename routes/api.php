@@ -47,3 +47,4 @@ Route::post('logout', 'Auth\LoginController@logout');
 Route::get('csrf-cookie', '\Laravel\Sanctum\Http\Controllers\CsrfCookieController@show');
 
 Route::post('email', 'MessageController@sendMessage');
+Route::post('record-email', 'MessageController@sendRecordMessage');
