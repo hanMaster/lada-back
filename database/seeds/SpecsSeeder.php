@@ -12,14 +12,14 @@ class SpecsSeeder extends Seeder
      */
     public function run()
     {
-        Spec::insert(['name' => 'терапевт']);
-        Spec::insert(['name' => 'гастроэнтеролог']);
-        Spec::insert(['name' => 'кардиолог']);
-        Spec::insert(['name' => 'сомнолог']);
-        Spec::insert(['name' => 'онколог']);
-        Spec::insert(['name' => 'гинеколог']);
-        Spec::insert(['name' => 'узи']);
-        Spec::insert(['name' => 'эндокринолог']);
-        Spec::insert(['name' => 'отоларинголог']);
+        Spec::insert(['name' => 'терапевт', 'interval' => 20]);
+        Spec::insert(['name' => 'гастроэнтеролог', 'interval' => 20]);
+        Spec::insert(['name' => 'кардиолог', 'interval' => 20]);
+        Spec::insert(['name' => 'сомнолог', 'interval' => 30]);
+        Spec::insert(['name' => 'онколог', 'interval' => 20]);
+        Spec::insert(['name' => 'гинеколог', 'interval' => 20]);
+        Spec::insert(['name' => 'узи', 'interval' => 20]);
+        Spec::insert(['name' => 'эндокринолог', 'interval' => 20]);
+        Spec::insert(['name' => 'отоларинголог', 'interval' => 15]);
     }
 }

@@ -16,6 +16,7 @@ class CreateSpecsTable extends Migration
         Schema::create('specs', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->integer('interval')->default(20);
         });
     }
 

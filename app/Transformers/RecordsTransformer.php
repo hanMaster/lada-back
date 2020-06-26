@@ -37,6 +37,7 @@ class RecordsTransformer extends TransformerAbstract
             'doctor'=>$event->doctor->name,
             'doctorId' => $event->doctor->id,
             'service' => $event->service->name,
+            'duration' => $event->service->duration,
             'phone'=>$event->phone,
             'start'=>$event->start,
             'name'=>$event->name,

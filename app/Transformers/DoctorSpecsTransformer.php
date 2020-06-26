@@ -43,6 +43,7 @@ class DoctorSpecsTransformer extends TransformerAbstract
         return [
             'id'=>$spec->id,
             'name'=>$spec->name,
+            'interval' => $spec->interval,
             'businessHours'=>$bh->businessHours
         ];
     }
