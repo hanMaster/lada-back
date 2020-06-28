@@ -20,7 +20,7 @@ Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
 
 Route::get('filials', 'FilialDoctorsController@index')->name('filials');
 
-Route::get('events/{filial}', 'EventController@index')->middleware(AUTH_SANCTUM);
+Route::get('events/{filial}', 'EventController@index');
 
 
 Route::get('doctors/{filial}', 'FilialDoctorsController@doctors');

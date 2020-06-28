@@ -33,6 +33,7 @@ class RecordMessageRequest extends FormRequest
             'date' => 'string',
             'doctor' => 'string',
             'service' => 'string',
+            'price' => 'string',
             'address' => 'string',
             'email' => 'required|email|max: 255',
         ];
