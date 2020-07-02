@@ -15,17 +15,17 @@ class UsersTableSeeder extends Seeder
     {
         User::insert([
             'name' => 'Администратор 1',
-            'email' => '1@2.com',
-            'password' => bcrypt('1qaz2wsx'),
+            'email' => 'admin1@ladamed.ru',
+            'password' => bcrypt('1Qaz2Wsx'),
             'filial_id'=> 1,
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
         User::insert([
             'name' => 'Администратор 2',
-            'email' => '2@2.com',
+            'email' => 'admin2@ladamed.ru',
             'filial_id'=> 2,
-            'password' => bcrypt('1qaz2wsx'),
+            'password' => bcrypt('3Edc4Rfv'),
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
