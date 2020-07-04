@@ -41,6 +41,7 @@ class RecordsTransformer extends TransformerAbstract
             'phone'=>$event->phone,
             'start'=>$event->start,
             'name'=>$event->name,
+            'deleted' => isset($event->deleted_at)
         ];
     }
 }

@@ -23,6 +23,7 @@ class CreateCalendarEventsTable extends Migration
             $table->string('phone');
             $table->integer('payment_type');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

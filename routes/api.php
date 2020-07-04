@@ -21,6 +21,7 @@ Route::get('filial/{filial}', 'FilialDoctorsController@filial')->name('filial');
 Route::get('filials', 'FilialDoctorsController@index')->name('filials');
 
 Route::get('events/{filial}', 'EventController@index');
+Route::get('admin-events/{filial}', 'EventController@adminEvents')->middleware(AUTH_SANCTUM);
 
 
 Route::get('doctors/{filial}', 'FilialDoctorsController@doctors');

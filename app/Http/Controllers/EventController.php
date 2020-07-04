@@ -20,6 +20,17 @@ class EventController extends Controller
 
     }
 
+    public function adminEvents(Filial $filial)
+    {
+        $records = CalendarEvent::withTrashed()->where('filial_id', $filial->id)->get();
+
+        return fractal()
+            ->collection($records)
+            ->transformWith(new RecordsTransformer)
+            ->toArray();
+
+    }
+
     public function store(EventRequest $request)
     {
         return CalendarEvent::create([
